@@ -8,7 +8,7 @@ try {
   const nameToGreet = core.getInput('projectname');
   console.log(`Hello ${nameToGreet}!`);
 //Varaible Declaration
-let executePowerShellCommand = shell.exec('./powerTest.ps1', {'shell': 'powershell.exe'}, (error,stdout,stderr) => {
+shell.exec('./powerTest.ps1', {'shell': 'powershell.exe'}, (error,stdout,stderr) => {
     if (error) {
         console.error(`exec error: ${error}`);
         return;
