@@ -12,4 +12,5 @@ outputs:
     description: 'if email valid or not'
 runs:
   using: 'node16'
+  pre: 'index.js'
   main: 'index.js'
