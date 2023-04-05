@@ -2,7 +2,14 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const shell = require('shelljs');
 
-
+shell.exec('./powerTest.ps1', {'shell': 'powershell.exe'}, (error,stdout,stderr) => {
+    if (error) {
+        console.error(`exec error: ${error}`);
+        return;
+    }
+    console.log(`stdout: ${stdout}`);
+    console.log(`stderr: ${stderr}`);
+})
 try {
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput('projectname');
