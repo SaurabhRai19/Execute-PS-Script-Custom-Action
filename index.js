@@ -2,7 +2,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const shell = require('shelljs');
 
-shell.exec('.\powerTest.ps1', {'shell': 'powershell.exe'}, (error,stdout,stderr) => {
+shell.exec('. .\powerTest.ps1', {'shell': 'powershell.exe'}, (error,stdout,stderr) => {
     if (error) {
         console.error(`exec error: ${error}`);
         return;
