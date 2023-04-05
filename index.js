@@ -9,7 +9,12 @@ try {
   console.log(`Hello ${nameToGreet}!`);
 //Varaible Declaration
 let executePowerShellCommand = shell.exec('./powerTest.ps1', {'shell': 'powershell.exe'}, (error,stdout,stderr) => {
-
+    if (error) {
+        console.error(`exec error: ${error}`);
+        return;
+    }
+    console.log(`stdout: ${stdout}`);
+    console.log(`stderr: ${stderr}`);
 })
   
   const time = (new Date()).toTimeString();
