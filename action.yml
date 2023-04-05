@@ -1,0 +1,15 @@
+name: 'Execute Scripts Internally'
+description: 'Execute scripts internally'
+inputs:
+  projectname:  # id of input
+    description: 'Name of the project'
+    required: true
+    default: 'project A'
+  
+    
+outputs:
+  message: # id of output
+    description: 'if email valid or not'
+runs:
+  using: 'node16'
+  main: 'index.js'
